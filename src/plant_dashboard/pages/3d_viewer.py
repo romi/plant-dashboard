@@ -266,11 +266,14 @@ def get_dataset_api_info(pathname, dataset_id, host, port):
           Input('dataset-api-info', 'data'),
           State('dataset-id', 'data'),
           State('data-dict', 'data'),
+          State('url', 'pathname'),
           State('rest-api-host', 'data'),
           State('rest-api-port', 'data'),
           prevent_initial_call=True)
-def fetch_data(api_data, dataset_id, data_dict, host, port):
-    # TODO : we could use a loading progress bar (using a `dcc.Interval`)...
+def fetch_data(api_data, dataset_id, data_dict, pathname, host, port):
+    if pathname != '/3d_viewer':
+        return {}
+    # TODO : we could split this for each dict entry & use a loading progress bar (using a `dcc.Interval`)...
     print(f"[{t_now()}] Callback `fetch_data`...")
     api_kwargs = {"host": host, "port": port}
     data_dict["PointCloud"] = get_task_data(dataset_id, "PointCloud", api_data=api_data, **api_kwargs)
