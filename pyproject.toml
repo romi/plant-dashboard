@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plant-dashboard"
+version = "0.1.0"
+description = "A Dash webapp to browse single plant acquisitions, run reconstruction pipelines & explore the results."
+authors = [
+    { name = "Jonathan Legrand", email = "jonathan.legrand@ens-lyon.fr" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "colorlog",
+    "pandas",
+    "toml",
+    "pillow",
+    "requests",
+    "pygraphviz",
+    # Tasks Manager + Broker & result backends:
+    "celery",
+    "redis",
+    # Dash & Dash third-party components
+    "dash>= 2.16.0",
+    "dash-ace",
+    "dash-ag-grid",
+    "dash-bootstrap-components",
+    "dash-cool-components",
+    "dash-iconify",
+    "plotly>= 5.21.0",
+]
+
+[project.urls]
+Homepage = "https://romi-project.eu/"
+Documentation = "https://docs.romi-project.eu/plant_imager/"
+Repository = "https://github.com/romi/plant-dashboard"
+Issues = "https://github.com/romi/plant-dashboard/issues"
+
+[project.optional-dependencies]
+nb = [
+    "notebook >=7",
+]
+romi = [
+    "romitask@git+https://github.com/romi/romitask#egg=dev",
+    "plantdb@git+https://github.com/romi/plantdb#egg=dev",
+    "romicgal@git+https://github.com/romi/romicgal#egg=dev",
+    "romiseg@git+https://github.com/romi/romiseg#egg=dev",
+    "plant3dvision@git+https://github.com/romi/plant3dvisionv#egg=dev",
+]

@@ -1,0 +1,51 @@
+/*https://fonts.google.com/*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu Mono';
+    src: url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    background-color: #F3F3F3;
+}
+
+nav {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+}
+
+.navbar {
+    --bs-navbar-active-color: #F3F3F3;
+    --bs-navbar-brand-hover-color: #F3F3F3;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #F3F3F3;
+    text-decoration-color: #F3F3F3;
+}
+
+.nav-link {
+    color: #F3F3F3;
+}
+
+.ace_editor {
+    font-family: "Ubuntu Mono", monospace;
+}
+
+.rendered-react-keyed-file-browser {
+    font-family: "Ubuntu Mono", monospace;
+}
